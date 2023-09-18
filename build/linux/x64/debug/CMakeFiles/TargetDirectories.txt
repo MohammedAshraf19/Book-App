@@ -1,0 +1,14 @@
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/install/strip.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/install/local.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/install.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/list_install_components.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/rebuild_cache.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/edit_cache.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/CMakeFiles/books.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/install.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/list_install_components.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
+/home/m7md-a4raf/StudioProjects/books/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir
