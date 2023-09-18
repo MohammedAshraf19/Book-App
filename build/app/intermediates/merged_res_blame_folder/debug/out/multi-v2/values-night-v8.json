@@ -4,7 +4,7 @@
             "outputFile": "com.example.books.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/m7md-a4raf/StudioProjects/books/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/m7md-a4raf/StudioProjects/Book-App/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
