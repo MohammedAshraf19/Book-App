@@ -10,10 +10,11 @@ class BookListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40,horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 40),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height / 3.5,
         child: ListView.separated(
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
             return AspectRatio(
               aspectRatio:  2.4 / 4,
