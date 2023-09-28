@@ -23,7 +23,7 @@ class BooksApp extends StatelessWidget {
       ),
 
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      home: const SplashView(),
     );
   }
 }
