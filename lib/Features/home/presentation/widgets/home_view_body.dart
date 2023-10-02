@@ -1,7 +1,7 @@
 import 'package:books/Core/utils/styles.dart';
 import 'package:books/Features/home/presentation/widgets/best_seller_listView.dart';
 import 'package:books/Features/home/presentation/widgets/book_list_view.dart';
-import 'package:books/Features/home/presentation/widgets/custom_appBar.dart';
+import 'package:books/Features/home/presentation/widgets/custom_home_appBar.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(),
+          CustomHomeAppBar(),
           BookListView(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),

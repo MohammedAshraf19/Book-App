@@ -1,4 +1,4 @@
-#Thu Sep 28 17:26:44 EET 2023
+#Sat Sep 30 12:16:27 EET 2023
 base.0=/home/m7md-a4raf/StudioProjects/Book-App/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

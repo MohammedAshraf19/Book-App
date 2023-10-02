@@ -1,6 +1,7 @@
+import 'package:books/Features/home/presentation/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../Core/utils/assets.dart';
+
 
 class BookListView extends StatelessWidget {
   const BookListView({
@@ -16,24 +17,7 @@ class BookListView extends StatelessWidget {
         child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
-            return AspectRatio(
-              aspectRatio:  2.4 / 4,
-              child: Container(
-                alignment: Alignment.bottomRight,
-                width: MediaQuery.sizeOf(context).width / 2.5,
-                decoration:  BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: const DecorationImage(
-                      image: AssetImage(Assets.test),
-                      fit: BoxFit.fill
-                  ),
-                ),
-                child: const Icon(
-                  Icons.slow_motion_video_sharp,
-                  size: 55,
-                ),
-              ),
-            );
+            return const BookImage();
           },
           separatorBuilder: (context, index) {
             return const SizedBox(
@@ -47,3 +31,4 @@ class BookListView extends StatelessWidget {
     );
   }
 }
+

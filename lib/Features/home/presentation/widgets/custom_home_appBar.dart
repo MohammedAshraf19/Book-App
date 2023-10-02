@@ -4,18 +4,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../Core/utils/assets.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+class CustomHomeAppBar extends StatelessWidget {
+  const CustomHomeAppBar({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 50,right: 10),
+      padding: const EdgeInsets.only(top: 50,right: 10,left: 10),
       child: Row(
         children: [
-          Image.asset(Assets.logo,height: MediaQuery.sizeOf(context).height / 15),
+          Image.asset(
+              Assets.logo,height: MediaQuery.sizeOf(context).height / 40
+          ),
           const Spacer(),
           IconButton(
             onPressed: (){},

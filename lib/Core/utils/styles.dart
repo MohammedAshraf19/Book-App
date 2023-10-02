@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-abstract class Styles
-{
+abstract class Styles {
   static const testStyle14 = TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.w500
+      fontWeight: FontWeight.w500,
+      color: Colors.grey
   );
-  static const testStyle16 = TextStyle(
-      fontSize: 16
-  );
+  static const testStyle16 = TextStyle(fontSize: 16);
   static const testStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,

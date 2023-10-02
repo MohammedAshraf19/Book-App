@@ -9,6 +9,7 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Icon(
           FontAwesomeIcons.solidStar,
@@ -25,9 +26,9 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 3,
         ),
-        Text(
+        const Text(
           "(2852)",
-          style: Styles.testStyle14.copyWith(color: Colors.grey),
+          style: Styles.testStyle14,
         ),
       ],
     );
