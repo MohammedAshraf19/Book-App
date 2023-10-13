@@ -13,28 +13,21 @@ class BookDetailsViewDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 10,
-        ),
-        Padding(
-          padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 5),
-          child: const BookImage(),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
         const Text(
           "The Jungle Book",
-          style: Styles.testStyle20,
+          style: Styles.testStyle30,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(
           height: 6,
         ),
-        Text(
-          "Rudgerd Kipling",
-          style: Styles.testStyle14.copyWith(fontWeight: FontWeight.bold),
+        Opacity(
+          opacity: 0.7,
+          child: Text(
+            "Rudgerd Kipling",
+            style: Styles.testStyle18.copyWith(fontWeight: FontWeight.w500),
+          ),
         ),
         const SizedBox(
           height: 15,

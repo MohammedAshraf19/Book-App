@@ -7,11 +7,10 @@ class BookListView extends StatelessWidget {
   const BookListView({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40),
+      padding:  EdgeInsets.symmetric(vertical: 40,horizontal: 5),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height / 3.5,
         child: ListView.separated(
@@ -21,7 +20,7 @@ class BookListView extends StatelessWidget {
           },
           separatorBuilder: (context, index) {
             return const SizedBox(
-              width: 20,
+              width: 8,
             );
           },
           scrollDirection: Axis.horizontal,

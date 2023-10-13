@@ -11,9 +11,9 @@ class BookRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Icon(
+         Icon(
           FontAwesomeIcons.solidStar,
-          color: Colors.amber,
+          color: Colors.amber[300],
           size: 18,
         ),
         const SizedBox(
@@ -26,9 +26,12 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 3,
         ),
-        const Text(
-          "(2852)",
-          style: Styles.testStyle14,
+        const Opacity(
+          opacity: 0.6,
+          child: Text(
+            "(2852)",
+            style: Styles.testStyle14,
+          ),
         ),
       ],
     );
