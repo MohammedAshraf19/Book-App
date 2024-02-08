@@ -1,14 +1,14 @@
-import 'package:books/Features/home/data/repos/home_repo_impl.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 
 import '../../../data/models/book_model/BookModel.dart';
+import '../../../data/repos/home_repo.dart';
 part 'feature_book_state.dart';
 
 class FeatureBookCubit extends Cubit<FeatureBookState> {
   FeatureBookCubit(this.homeRepo) : super(FeatureBookInitial());
 
-  final HomeRepoImpl homeRepo;
+  final HomeRepo homeRepo;
   Future<void> getFeatureBook()
   async
   {

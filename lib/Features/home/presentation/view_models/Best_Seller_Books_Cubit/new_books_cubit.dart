@@ -1,15 +1,15 @@
 import 'package:bloc/bloc.dart';
-import 'package:books/Features/home/data/repos/home_repo_impl.dart';
 import 'package:meta/meta.dart';
 
 import '../../../data/models/book_model/BookModel.dart';
+import '../../../data/repos/home_repo.dart';
 
 part 'new_books_state.dart';
 
 class NewBooksCubit extends Cubit<NewBooksState> {
   NewBooksCubit(this.homeRepo) : super(BestSellerBooksInitial());
 
-  final HomeRepoImpl homeRepo;
+  final HomeRepo homeRepo;
   Future<void> getBestSellerBook() async
   {
     emit(NewBooksLoading());
