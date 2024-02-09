@@ -7,10 +7,12 @@ import 'package:books/Features/home/presentation/view_models/Feature_Book_Cubit/
 import 'package:books/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 
+import 'Core/utils/bloc_observer.dart';
+
 void main() {
+  Bloc.observer = MyBlocObserver();
   setupServiceLocator();
   ApiServices.init();
   runApp(
@@ -25,8 +27,12 @@ class BooksApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => FeatureBookCubit(getIt.get<HomeRepoImpl>())),
-        BlocProvider(create: (context) => NewBooksCubit(getIt.get<HomeRepoImpl>())),
+        BlocProvider(
+            create: (context) => FeatureBookCubit(getIt.get<HomeRepoImpl>())..getFeatureBook()
+        ),
+        BlocProvider(
+            create: (context) => NewBooksCubit(getIt.get<HomeRepoImpl>())
+        ),
       ],
       child: MaterialApp.router(
         title: 'Bookly',
