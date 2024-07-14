@@ -21,7 +21,7 @@ class BookRating extends StatelessWidget {
           width: 7,
         ),
         Text(
-          '${bookRate}',
+          '${bookRate ?? 4}',
           style: Styles.testStyle18.copyWith(fontSize: 15),
         ),
         const SizedBox(
@@ -30,7 +30,7 @@ class BookRating extends StatelessWidget {
          Opacity(
           opacity: 0.6,
           child: Text(
-            '${bookRateNumber}',
+            '${bookRateNumber ?? 100}',
             style: Styles.testStyle14,
           ),
         ),

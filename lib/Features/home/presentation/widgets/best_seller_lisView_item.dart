@@ -1,10 +1,8 @@
 import 'package:books/Core/utils/app_routers.dart';
-import 'package:books/Core/utils/assets.dart';
 import 'package:books/Core/utils/styles.dart';
 import 'package:books/Features/home/presentation/widgets/book_rating.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -28,7 +26,7 @@ class BestSellerListViewItem extends StatelessWidget {
         );
       },
       child: SizedBox(
-        height: MediaQuery.sizeOf(context).height / 5.7,
+        height: MediaQuery.sizeOf(context).height / 5.5,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
