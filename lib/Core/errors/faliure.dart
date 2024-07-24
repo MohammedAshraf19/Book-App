@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 abstract class Failure{
   final String errorMessage;
@@ -42,6 +41,6 @@ class ServerFailure extends Failure
     } else if (status == 404) {
       return ServerFailure("Please, Try Again Later");
     }
-    return ServerFailure("Error");
+    return ServerFailure("Unexpected Error PLease Try Again, Later");
   }
 }
