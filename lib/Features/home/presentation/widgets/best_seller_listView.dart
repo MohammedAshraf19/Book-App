@@ -22,19 +22,14 @@ class BestSellerListView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 20),
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) =>  BestSellerListViewItem(
-              bookImage: state.books[index].volumeInfo!.imageLinks!.thumbnail,
-              bookAuthor: state.books[index].volumeInfo!.authors![0].toString(),
-              bookPrice: state.books[index].volumeInfo?.pageCount,
-              bookTitle: state.books[index].volumeInfo!.title,
-              bookRateNumber: state.books[index].volumeInfo!.ratingsCount,
-              bookRate: state.books[index].volumeInfo!.averageRating,
+              book: state.books[index],
             ),
             separatorBuilder: (context, index) {
               return const Divider(
                 height: 15,
               );
             },
-            itemCount: state.books.length,
+            itemCount: state.books.length - 1,
           ),
         );
         }

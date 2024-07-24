@@ -1,5 +1,6 @@
 import 'package:books/Core/utils/app_routers.dart';
 import 'package:books/Core/utils/styles.dart';
+import 'package:books/Features/home/data/models/book_model/BookModel.dart';
 import 'package:books/Features/home/presentation/widgets/book_rating.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -7,22 +8,19 @@ import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({
-    super.key, required this.bookTitle, required this.bookImage, required this.bookAuthor, required this.bookPrice, this.bookRate, this.bookRateNumber,
+    super.key,
+    required this.book,
+
   });
 
-  final dynamic bookTitle;
-  final dynamic bookImage;
-  final dynamic bookAuthor;
-  final dynamic bookPrice;
-  final dynamic bookRate;
-  final dynamic bookRateNumber;
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
         GoRouter.of(context).push(
-          AppRouters.bookDetailsView
+            AppRouters.bookDetailsView
         );
       },
       child: SizedBox(
@@ -35,7 +33,7 @@ class BestSellerListViewItem extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio:  2.6 / 4,
                 child: CachedNetworkImage(
-                  imageUrl: bookImage,
+                  imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
                   fit: BoxFit.fill,
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
@@ -50,10 +48,10 @@ class BestSellerListViewItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     SizedBox(
-                       width: MediaQuery.sizeOf(context).width * .5,
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * .5,
                       child:   Text(
-                        bookTitle,
+                        book.volumeInfo!.title!,
                         style: Styles.testStyle20,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -62,28 +60,28 @@ class BestSellerListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                      Opacity(
-                       opacity: 0.7,
-                       child: Text(
-                         bookAuthor,
-                         style: Styles.testStyle14,
-                         maxLines: 1,
-                         overflow: TextOverflow.ellipsis,
+                    Opacity(
+                      opacity: 0.7,
+                      child: Text(
+                        book.volumeInfo!.authors![0].toString(),
+                        style: Styles.testStyle14,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                     ),
                     const SizedBox(
                       height: 3,
                     ),
-                     Row(
+                    Row(
                       children: [
                         Text(
-                          "${bookPrice} \$",
+                          "${book.volumeInfo?.pageCount} \$",
                           style: Styles.testStyle20,
                         ),
                         const Spacer(),
-                         BookRating(
-                          bookRate: bookRate,
-                          bookRateNumber: bookRateNumber,
+                        BookRating(
+                          bookRate: book.volumeInfo!.averageRating,
+                          bookRateNumber: book.volumeInfo!.ratingsCount,
                         ),
                       ],
                     ),
@@ -97,4 +95,3 @@ class BestSellerListViewItem extends StatelessWidget {
     );
   }
 }
-
