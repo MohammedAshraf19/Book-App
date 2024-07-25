@@ -1,9 +1,10 @@
 import 'package:books/Core/widgets/custom_error.dart';
-import 'package:books/Core/widgets/custom_loading.dart';
 import 'package:books/Features/home/presentation/view_models/New_Books_Cubit/new_books_cubit.dart';
 import 'package:books/Features/home/presentation/widgets/best_seller_lisView_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'best_seller_listView_Loading.dart';
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({
@@ -38,10 +39,7 @@ class BestSellerListView extends StatelessWidget {
           return CustomError(error: state.error);
         }
         else{
-          return Padding(
-            padding:  EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 3),
-            child: const Center(child: CustomLoading()),
-          );
+          return const BestSellerListViewLoading();
         }
       },
     );

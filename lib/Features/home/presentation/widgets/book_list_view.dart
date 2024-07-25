@@ -1,7 +1,7 @@
 import 'package:books/Core/widgets/custom_error.dart';
-import 'package:books/Core/widgets/custom_loading.dart';
 import 'package:books/Features/home/presentation/view_models/Feature_Book_Cubit/feature_book_cubit.dart';
 import 'package:books/Features/home/presentation/widgets/book_image.dart';
+import 'package:books/Features/home/presentation/widgets/book_list_view_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -52,7 +52,7 @@ class BookListView extends StatelessWidget {
           return CustomError(error: state.error);
         }
         else{
-          return const CustomLoading();
+          return const BookListViewLoading();
         }
       },
     );

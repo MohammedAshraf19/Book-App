@@ -1,7 +1,7 @@
 import 'package:books/Core/widgets/custom_error.dart';
-import 'package:books/Core/widgets/custom_loading.dart';
 import 'package:books/Features/home/presentation/view_models/similar_books/similar_book_cubit.dart';
 import 'package:books/Features/home/presentation/widgets/book_image.dart';
+import 'package:books/Features/home/presentation/widgets/similar_books_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -52,7 +52,7 @@ class SimilarBookListView extends StatelessWidget {
         }
         else
           {
-            return const CustomLoading();
+            return const SimilarBooksLoading();
           }
       },
     );
