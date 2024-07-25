@@ -1,35 +1,41 @@
+import 'package:books/Features/home/data/models/book_model/BookModel.dart';
 import 'package:books/Features/home/presentation/widgets/books_details_section.dart';
 import 'package:books/Features/home/presentation/widgets/custom_book_details_appBAr.dart';
 import 'package:books/Features/home/presentation/widgets/similar_book_section.dart';
 import 'package:flutter/material.dart';
 
 class BookViewDetailsBody extends StatelessWidget {
-  const BookViewDetailsBody({super.key});
+  const BookViewDetailsBody({super.key, required this.book});
 
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
-    return   const CustomScrollView(
-      physics: BouncingScrollPhysics(),
+    return    CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomBookDetailsAppBar(),
-                SizedBox(
+                const CustomBookDetailsAppBar(),
+                const SizedBox(
                   height: 10,
                 ),
-                BooksDetailsSection(),
-                Expanded(
+                 BooksDetailsSection(
+                  book: book,
+                ),
+                const Expanded(
                   child: SizedBox(
                     height: 30,
                   ),
                 ),
-                SimilarBooksSection(),
-                SizedBox(
+                SimilarBooksSection(
+                  category: book.volumeInfo!.categories!.isNotEmpty ?book.volumeInfo!.categories![0] : 'programming',
+                ),
+                const SizedBox(
                   height: 40,
                 ),
               ],

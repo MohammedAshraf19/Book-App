@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 
 class SimilarBooksSection extends StatelessWidget {
   const SimilarBooksSection({
-    super.key,
+    super.key, required this.category,
   });
 
+  final String  category;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +22,7 @@ class SimilarBooksSection extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        const SimilarBookListView(),
+         SimilarBookListView(category: category,),
       ],
     );
   }

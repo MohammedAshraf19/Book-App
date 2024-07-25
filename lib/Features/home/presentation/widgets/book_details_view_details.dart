@@ -1,20 +1,20 @@
-import 'package:books/Core/utils/assets.dart';
 import 'package:books/Core/utils/styles.dart';
-import 'package:books/Features/home/presentation/widgets/book_image.dart';
 import 'package:books/Features/home/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
+import '../../data/models/book_model/BookModel.dart';
 
 class BookDetailsViewDetails extends StatelessWidget {
   const BookDetailsViewDetails({
-    super.key,
+    super.key, required this.book,
   });
 
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "The Jungle Book",
+         Text(
+          book.volumeInfo!.title!,
           style: Styles.testStyle30,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
@@ -25,16 +25,18 @@ class BookDetailsViewDetails extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            "Rudgerd Kipling",
+            book.volumeInfo!.authors!.isNotEmpty ? book.volumeInfo!.authors![0].toString() : 'Un Known',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Styles.testStyle18.copyWith(fontWeight: FontWeight.w500),
           ),
         ),
         const SizedBox(
           height: 15,
         ),
-        const BookRating(
-          bookRate: 10,
-          bookRateNumber: 10,
+         BookRating(
+          bookRate: book.volumeInfo!.averageRating,
+          bookRateNumber: book.volumeInfo!.ratingsCount,
         ),
       ],
     );

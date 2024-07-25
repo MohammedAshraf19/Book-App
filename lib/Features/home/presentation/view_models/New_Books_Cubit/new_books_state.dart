@@ -1,6 +1,4 @@
 part of 'new_books_cubit.dart';
-
-@immutable
 abstract class NewBooksState {}
 
 class BestSellerBooksInitial extends NewBooksState {}
