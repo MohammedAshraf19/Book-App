@@ -4,26 +4,15 @@ import 'package:books/Features/home/presentation/view_models/similar_books/simil
 import 'package:books/Features/home/presentation/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
-class SimilarBookListView extends StatefulWidget {
+import '../../../../Core/utils/app_routers.dart';
+
+class SimilarBookListView extends StatelessWidget {
   const SimilarBookListView({
     super.key,
-    required this.category
   });
 
-  final String category;
-
-  @override
-  State<SimilarBookListView> createState() => _SimilarBookListViewState();
-}
-
-class _SimilarBookListViewState extends State<SimilarBookListView> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    SimilarBooksCubit.get(context).getSimilarBook(category: widget.category);
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
@@ -36,8 +25,16 @@ class _SimilarBookListViewState extends State<SimilarBookListView> {
             child: ListView.separated(
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
-                return  BookImage(
-                  image: state.books[index].volumeInfo!.imageLinks!.thumbnail,
+                return  InkWell(
+                  onTap: (){
+                    GoRouter.of(context).push(
+                        AppRouters.bookDetailsView,
+                        extra: state.books[index]
+                    );
+                  },
+                  child: BookImage(
+                    image: state.books[index].volumeInfo!.imageLinks!.thumbnail,
+                  ),
                 );
               },
               separatorBuilder: (context, index) {

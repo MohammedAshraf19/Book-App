@@ -17,6 +17,7 @@ class BookDetailsViewDetails extends StatelessWidget {
           book.volumeInfo!.title!,
           style: Styles.testStyle30,
           maxLines: 2,
+           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(
@@ -25,8 +26,9 @@ class BookDetailsViewDetails extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            book.volumeInfo!.authors!.isNotEmpty ? book.volumeInfo!.authors![0].toString() : 'Un Known',
-            maxLines: 1,
+            book.volumeInfo!.authors!.isNotEmpty ? book.volumeInfo!.authors![0] : 'Un Known',
+            maxLines: 2,
+            textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
             style: Styles.testStyle18.copyWith(fontWeight: FontWeight.w500),
           ),

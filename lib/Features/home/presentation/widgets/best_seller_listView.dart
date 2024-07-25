@@ -16,7 +16,7 @@ class BestSellerListView extends StatelessWidget {
       builder: (context, state) {
         if (state is NewBooksSuccess) {
           return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ListView.separated(
             shrinkWrap: true,
             padding: const EdgeInsets.symmetric(vertical: 20),
