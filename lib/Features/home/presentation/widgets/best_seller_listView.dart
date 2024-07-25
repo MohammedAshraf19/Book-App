@@ -29,7 +29,7 @@ class BestSellerListView extends StatelessWidget {
                 height: 15,
               );
             },
-            itemCount: state.books.length - 1,
+            itemCount: state.books.length ,
           ),
         );
         }

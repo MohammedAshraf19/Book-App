@@ -63,7 +63,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     Opacity(
                       opacity: 0.7,
                       child: Text(
-                        book.volumeInfo!.authors![0].toString(),
+                        book.volumeInfo!.authors!.isNotEmpty ? book.volumeInfo!.authors![0].toString() : 'Un Known',
                         style: Styles.testStyle14,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
