@@ -7,7 +7,7 @@ part 'feature_book_state.dart';
 class FeatureBookCubit extends Cubit<FeatureBookState> {
   FeatureBookCubit(this.homeRepo) : super(FeatureBookInitial());
 
-  FeatureBookCubit get(context)=>BlocProvider.of(context);
+   static FeatureBookCubit get(context)=>BlocProvider.of(context);
   final HomeRepo homeRepo;
   Future<void> getFeatureBook()
   async
