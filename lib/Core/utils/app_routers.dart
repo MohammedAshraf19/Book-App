@@ -1,5 +1,7 @@
 import 'package:books/Core/utils/service_locator.dart';
 import 'package:books/Features/Search/Presentation/view/search_view.dart';
+import 'package:books/Features/Search/Presentation/view_model/search_cubit/search_cubit.dart';
+import 'package:books/Features/Search/data/repo/sreach_repo_impl.dart';
 import 'package:books/Features/home/data/models/book_model/BookModel.dart';
 import 'package:books/Features/home/presentation/view/book_details_view.dart';
 import 'package:books/Features/home/presentation/view/home_view.dart';
@@ -45,7 +47,9 @@ abstract class AppRouters
       GoRoute(
         path: searchView,
         builder: (context, state) {
-          return const SearchView();
+          return BlocProvider(
+              create: (BuildContext context)=> SearchCubit(SearchRepoImpl()),
+              child: const SearchView());
         },
       ),
     ],
