@@ -26,9 +26,9 @@ class BooksDetailsSection extends StatelessWidget {
          BookDetailsViewDetails(
           book: book,
         ),
-         BooksAction(
-          price: '${book.volumeInfo!.pageCount}',
-        ),
+          BooksAction(
+           bookModel: book,
+         ),
       ],
     );
   }

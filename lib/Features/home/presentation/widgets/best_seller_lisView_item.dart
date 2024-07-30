@@ -75,8 +75,8 @@ class BestSellerListViewItem extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          "${book.volumeInfo?.pageCount} \$",
+                        const Text(
+                          "FREE",
                           style: Styles.testStyle20,
                         ),
                         const Spacer(),

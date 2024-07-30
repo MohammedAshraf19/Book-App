@@ -1,35 +1,47 @@
+import 'package:books/Core/functions/custom_snack_bar.dart';
 import 'package:books/Core/widgets/custom_button.dart';
+import 'package:books/Features/home/data/models/book_model/BookModel.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
   const BooksAction({
-    super.key, required this.price,
+    super.key, required this.bookModel,
   });
 
-  final String price;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return   Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 35),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: CustomButton(
               backgroundColor: Colors.white,
-              text: '$price \$',
+              text: 'FREE',
               textColor: Colors.black,
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15),
                 bottomLeft: Radius.circular(15)
             ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: CustomButton(
-              backgroundColor: Color(0xffEF8262),
-              text: 'Free Preview',
+              onPressed: () async{
+                final Uri url = Uri.parse(bookModel.volumeInfo!.previewLink!??'');
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                }
+                else{
+                  customSnackBarError(context: context, message: 'Can not open $url');
+                }
+              },
+              backgroundColor: const Color(0xffEF8262),
+              text: 'Preview',
               textColor: Colors.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   bottomRight: Radius.circular(15),
                   topRight: Radius.circular(15)
               ),
@@ -39,5 +51,6 @@ class BooksAction extends StatelessWidget {
       ),
     );
   }
+
 }
 
