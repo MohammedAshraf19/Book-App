@@ -58,7 +58,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2),() {
-      GoRouter.of(context).push(AppRouters.homeView);
+      GoRouter.of(context).push(AppRouters.onBoardingView);
     },);
   }
 }

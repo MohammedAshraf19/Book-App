@@ -6,6 +6,7 @@ import 'package:books/Features/home/data/models/book_model/BookModel.dart';
 import 'package:books/Features/home/presentation/view/book_details_view.dart';
 import 'package:books/Features/home/presentation/view/home_view.dart';
 import 'package:books/Features/home/presentation/view_models/similar_books/similar_book_cubit.dart';
+import 'package:books/Features/on_boarding/presentation/view/on_boarding_view.dart';
 import 'package:books/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,7 @@ abstract class AppRouters
 {
   static const homeView = '/homeView';
   static const bookDetailsView = '/bookDetailsView';
+  static const onBoardingView = '/OnBoardingView';
   static const searchView = '/searchView';
   static final routers = GoRouter
     (
@@ -25,6 +27,13 @@ abstract class AppRouters
         path: '/',
         builder: (context, state) {
           return const SplashView();
+        },
+      ),
+
+      GoRoute(
+        path: onBoardingView,
+        builder: (context, state) {
+          return const OnBoardingView();
         },
       ),
       GoRoute(
