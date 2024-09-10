@@ -2,7 +2,12 @@
 class Assets {
   Assets._();
 
+  static const String imagesBackground = 'assets/images/background.jpeg';
+  static const String imagesFace = 'assets/images/face.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesTest = 'assets/images/test.png';
+  static const String lottieBook1 = 'assets/lottie/book_1.json';
+  static const String lottieBook2 = 'assets/lottie/book_2.json';
+  static const String lottieBook3 = 'assets/lottie/book_3.json';
 
 }

@@ -14,8 +14,8 @@ class FeatureBookCubit extends Cubit<FeatureBookState> {
   {
     emit(FeatureBookLoading());
     var result = await homeRepo.fetchFeaturedBooks();
-    result.fold((Error){
-      emit(FeatureBookError(error: Error.errorMessage));
+    result.fold((error){
+      emit(FeatureBookError(error: error.errorMessage));
     } , (Books) {
       emit(FeatureBookSuccess(books: Books));
     } );

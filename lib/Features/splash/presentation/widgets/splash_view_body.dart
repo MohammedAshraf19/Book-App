@@ -1,6 +1,8 @@
 import 'package:books/Core/utils/app_routers.dart';
 import 'package:books/Core/utils/assets.dart';
+import 'package:books/Core/utils/cache_helper.dart';
 import 'package:books/Features/splash/presentation/widgets/sliding_text.dart';
+import 'package:books/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -58,7 +60,13 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2),() {
-      GoRouter.of(context).push(AppRouters.onBoardingView);
+      if (CacheHelper().getData(key: token) != null)
+      {
+        GoRouter.of(context).push(AppRouters.loginView);
+      }
+      else{
+        GoRouter.of(context).push(AppRouters.onBoardingView);
+      }
     },);
   }
 }
