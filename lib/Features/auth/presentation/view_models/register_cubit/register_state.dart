@@ -11,4 +11,5 @@ final class RegisterError extends RegisterState {
   RegisterError({required this.error});
 }
 final class RegisterLoading extends RegisterState {}
+final class ChangeRegisterViewPassword extends RegisterState{}
 

@@ -1,5 +1,7 @@
 import 'package:books/Core/utils/app_routers.dart';
+import 'package:books/Core/utils/cache_helper.dart';
 import 'package:books/Features/on_boarding/presentation/view_models/on_boarding_cubit/on_boarding_cubit.dart';
+import 'package:books/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -15,13 +17,15 @@ class OnBoardingViewBody extends StatelessWidget {
           pages: OnBoardingCubit.get(context).listPagesViewModel,
           showSkipButton: true,
           onSkip: (){
-            GoRouter.of(context).push(AppRouters.homeView);
+            CacheHelper().saveData(key: token, value: 'token');
+            GoRouter.of(context).push(AppRouters.loginView);
           },
           showNextButton: false,
           skip: const Text("Skip"),
           done: const Text("Start"),
           onDone: () {
-            GoRouter.of(context).push(AppRouters.homeView);
+            CacheHelper().saveData(key: token, value: 'token');
+            GoRouter.of(context).push(AppRouters.loginView);
           },
           scrollPhysics: const BouncingScrollPhysics(),
         ),

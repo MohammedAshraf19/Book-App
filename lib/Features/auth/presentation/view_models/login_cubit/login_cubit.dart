@@ -11,6 +11,7 @@ class LoginCubit extends Cubit<LoginState> {
   static LoginCubit get(context) => BlocProvider.of(context);
 
   final AuthRepo authRepo;
+  bool viewPassword = true;
   GlobalKey<FormState> loginFormKey = GlobalKey();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -23,5 +24,9 @@ class LoginCubit extends Cubit<LoginState> {
     }, (user){
      emit(LoginSuccess());
     });
+  }
+  void changePasswordView(){
+    viewPassword = !viewPassword;
+    emit(ChangeLoginViewPassword());
   }
 }

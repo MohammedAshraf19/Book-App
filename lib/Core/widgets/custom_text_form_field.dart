@@ -9,8 +9,10 @@ class CustomTextFormField extends StatelessWidget {
     required this.hint,
     required this.textInputType,
     required this.controller,
+    this.suffix,
   });
   final IconData prefix;
+  final Widget? suffix;
   final String hint;
   final bool secure;
   final TextInputType textInputType;
@@ -30,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
         prefixIcon: Icon(
             prefix
         ),
+        suffixIcon: suffix,
         fillColor: Colors.white,
         filled: true,
         hintText: hint,

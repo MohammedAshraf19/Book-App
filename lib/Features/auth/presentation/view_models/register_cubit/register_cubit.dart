@@ -13,18 +13,21 @@ class RegisterCubit extends Cubit<RegisterState> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  bool viewPassword = true;
   final AuthRepo authRepo;
   Future<void> register()async{
     emit(RegisterLoading());
     var result = await authRepo.register(name: nameController.text, email: emailController.text, password: passwordController.text);
-    result.fold((error){
-      print('Error is ${error}');
+    result.fold((error){;
       emit(RegisterError(
         error: error
       ));
     }, (user){
-      print('User is ${user}');
       emit(RegisterSuccess());
     });
+  }
+  void changePasswordView(){
+    viewPassword = !viewPassword;
+    emit(ChangeRegisterViewPassword());
   }
 }

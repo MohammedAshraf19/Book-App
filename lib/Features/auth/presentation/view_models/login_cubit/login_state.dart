@@ -11,3 +11,4 @@ final class LoginError extends LoginState {
   final String error;
   LoginError({required this.error});
 }
+final class ChangeLoginViewPassword extends LoginState{}
