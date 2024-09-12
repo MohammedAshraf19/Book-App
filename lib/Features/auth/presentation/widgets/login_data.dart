@@ -10,40 +10,45 @@ class LoginData extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LoginCubit, LoginState>(
   builder: (context, state) {
-    return Column(
-      children: [
-        CustomTextFormField(
-            prefix: Icons.email_outlined,
-            secure: false,
-            hint: 'Email',
-            textInputType: TextInputType.emailAddress,
-            controller: LoginCubit.get(context).emailController
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        CustomTextFormField(
-            prefix: Icons.password_outlined,
-            secure: LoginCubit.get(context).viewPassword,
-            hint: 'Password',
-            textInputType: TextInputType.visiblePassword,
-            controller: LoginCubit.get(context).passwordController,
-          suffix:
-          IconButton(
-              onPressed: (){
-                LoginCubit.get(context).changePasswordView();
-              },
-              icon: Icon(
-                LoginCubit.get(context).viewPassword?
-                 Icons.visibility_off
-                : Icons.visibility,
-              ),
+    return Form(
+      key: LoginCubit.get(context).loginFormKey,
+      child: Column(
+        children: [
+          CustomTextFormField(
+              prefix: Icons.email_outlined,
+              secure: false,
+              hint: 'Email',
+              validate: 'Email',
+              textInputType: TextInputType.emailAddress,
+              controller: LoginCubit.get(context).emailController
           ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-      ],
+          const SizedBox(
+            height: 10,
+          ),
+          CustomTextFormField(
+              prefix: Icons.password_outlined,
+              validate: 'Password',
+              secure: LoginCubit.get(context).viewPassword,
+              hint: 'Password',
+              textInputType: TextInputType.visiblePassword,
+              controller: LoginCubit.get(context).passwordController,
+            suffix:
+            IconButton(
+                onPressed: (){
+                  LoginCubit.get(context).changePasswordView();
+                },
+                icon: Icon(
+                  LoginCubit.get(context).viewPassword?
+                   Icons.visibility_off
+                  : Icons.visibility,
+                ),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
     );
   },
 );

@@ -23,6 +23,12 @@ class RegisterViewBody extends StatelessWidget {
               message: state.error
           );
         }
+        else if (state is StoreUserDataError){
+          customSnackBarError(
+              context: context,
+              message: state.error
+          );
+        }
         else if (state is RegisterSuccess){
           customSnackBarSuccess(
               context: context,
@@ -54,8 +60,7 @@ class RegisterViewBody extends StatelessWidget {
                 ),
                 color: Colors.grey.withOpacity(0.2),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.symmetric(
-                      vertical: 10, horizontal: 15),
+                  padding: const EdgeInsetsDirectional.symmetric(vertical: 10, horizontal: 15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -71,7 +76,10 @@ class RegisterViewBody extends StatelessWidget {
                       CustomElevatedButton(
                           color: Colors.deepPurple,
                           onPressed: () {
-                            RegisterCubit.get(context).register();
+                            if (RegisterCubit.get(context).registerFormKey.currentState!.validate()) {
+                              RegisterCubit.get(context).register();
+                            }
+
                           },
                           child: Text(
                             'Sgn Up',

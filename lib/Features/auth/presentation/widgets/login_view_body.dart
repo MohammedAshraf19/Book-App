@@ -5,6 +5,7 @@ import 'package:books/Core/widgets/custom_loading.dart';
 import 'package:books/Features/auth/presentation/widgets/auth_app_bar.dart';
 import 'package:books/Features/auth/presentation/widgets/login_data.dart';
 import 'package:books/Features/auth/presentation/widgets/other_login.dart';
+import 'package:books/Features/auth/presentation/widgets/regitser_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -25,7 +26,7 @@ class LoginViewBody extends StatelessWidget {
               message: state.error
           );
         }
-        else if (state is LoginSuccess){
+        else if (state is GetUserDataSuccess){
           customSnackBarSuccess(
               context: context,
               message: 'Welcome Again'
@@ -60,7 +61,9 @@ class LoginViewBody extends StatelessWidget {
                   CustomElevatedButton(
                       color: Colors.deepPurple,
                       onPressed: (){
-                        LoginCubit.get(context).signIn();
+                        if (LoginCubit.get(context).loginFormKey.currentState!.validate()) {
+                          LoginCubit.get(context).signIn();
+                        }
                       },
                       child: Text(
                         'Continue',
@@ -72,22 +75,8 @@ class LoginViewBody extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                   const OtherLogin(),
-                   Row(
-                    children: [
-                      const Text(
-                        'Don\'t have an account ?',
-                      ),
-                      TextButton(
-                          onPressed: (){
-                            GoRouter.of(context).push(AppRouters.registerView);
-                          },
-                          child: const Text(
-                              'Sign Up'
-                          ),
-                      ),
-                    ],
-                  ),
+                  const OtherLogin(),
+                  const RegisterRow(),
                 ],
               ),
             ),

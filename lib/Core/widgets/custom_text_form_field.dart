@@ -1,3 +1,4 @@
+import 'package:books/Features/auth/presentation/view_models/register_cubit/register_cubit.dart';
 import 'package:flutter/material.dart';
 import '../../constant.dart';
 
@@ -9,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.hint,
     required this.textInputType,
     required this.controller,
-    this.suffix,
+    this.suffix, this.validate,
   });
   final IconData prefix;
   final Widget? suffix;
@@ -17,7 +18,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool secure;
   final TextInputType textInputType;
   final TextEditingController controller;
-
+  final String? validate;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -49,7 +50,17 @@ class CustomTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
       ),
-
+      validator: (value){
+        if (value!.isEmpty) {
+          return 'The $validate Must Not Be Empty';
+        }
+        else if (validate == 'Confirm Password' && (RegisterCubit.get(context).passwordController.text != RegisterCubit.get(context).confirmPasswordController.text)){
+          return 'Confirm Password Must Like Password';
+        }
+        else {
+          return null;
+        }
+      },
     );
   }
 }

@@ -2,6 +2,8 @@ import 'package:books/Core/utils/api_services.dart';
 import 'package:books/Core/utils/app_routers.dart';
 import 'package:books/Core/utils/cache_helper.dart';
 import 'package:books/Core/utils/service_locator.dart';
+import 'package:books/Features/auth/data/repo/auth_repo_impl.dart';
+import 'package:books/Features/auth/presentation/view_models/login_cubit/login_cubit.dart';
 import 'package:books/Features/home/data/repos/home_repo_impl.dart';
 import 'package:books/Features/home/presentation/view_models/Feature_Book_Cubit/feature_book_cubit.dart';
 import 'package:books/constant.dart';
@@ -36,6 +38,9 @@ class BooksApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (context) => FeatureBookCubit(getIt.get<HomeRepoImpl>())..getFeatureBook()
+        ),
+        BlocProvider(
+            create: (context) => LoginCubit(AuthRepoImpl())
         ),
         BlocProvider(
             create: (context) => NewBooksCubit(getIt.get<HomeRepoImpl>())..getBestSellerBook()
