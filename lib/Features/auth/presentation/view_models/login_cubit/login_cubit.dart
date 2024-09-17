@@ -43,6 +43,26 @@ class LoginCubit extends Cubit<LoginState> {
       });
     });
   }
+
+  Future<void> loginWithGoogle() async{
+    emit(LoginWithGoogleLoading());
+    var result = await authRepo.signWithGoogle();
+    result.fold((error){
+      print('The Error is $error');
+      emit(LoginWithGoogleError(error: error));
+    }, (value){
+      CacheHelper().saveData(key: uid, value: value.user!.uid);
+      myData = UserData(
+        image: value.user!.photoURL,
+        uID: value.user!.uid,
+        email: value.user!.email,
+        phone: value.user!.phoneNumber,
+        name: value.user!.displayName,
+      );
+      print('THe Data is ${myData.email}');
+      emit(LoginWithGoogleSuccess());
+    });
+  }
   // View Password
   void changePasswordView(){
     viewPassword = !viewPassword;

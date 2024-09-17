@@ -18,4 +18,11 @@ final class GetUserDataError extends LoginState {
   GetUserDataError({required this.error});
 }
 
+final class LoginWithGoogleLoading extends LoginState{}
+final class LoginWithGoogleSuccess extends LoginState {}
+final class LoginWithGoogleError extends LoginState {
+  final String error;
+  LoginWithGoogleError({required this.error});
+}
+
 final class ChangeLoginViewPassword extends LoginState{}
