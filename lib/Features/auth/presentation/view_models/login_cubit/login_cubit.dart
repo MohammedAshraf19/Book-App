@@ -25,7 +25,7 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginError(error: error));
     }, (user){
       CacheHelper().saveData(key: uid, value: user.user!.uid);
-     getUserData(user.user!.uid);
+      emit(LoginSuccess());
     });
   }
 

@@ -26,7 +26,7 @@ class LoginViewBody extends StatelessWidget {
               message: state.error
           );
         }
-        else if (state is GetUserDataSuccess){
+        else if (state is LoginSuccess){
           customSnackBarSuccess(
               context: context,
               message: 'Welcome Again'

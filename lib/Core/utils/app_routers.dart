@@ -9,6 +9,7 @@ import 'package:books/Features/home/presentation/view/book_details_view.dart';
 import 'package:books/Features/home/presentation/view/home_view.dart';
 import 'package:books/Features/home/presentation/view_models/similar_books/similar_book_cubit.dart';
 import 'package:books/Features/on_boarding/presentation/view/on_boarding_view.dart';
+import 'package:books/Features/profile/presentation/views/profile_view.dart';
 import 'package:books/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +25,7 @@ abstract class AppRouters
   static const searchView = '/searchView';
   static const loginView = '/loginView';
   static const registerView = '/registerView';
+  static const profileView = '/profileView';
   static final routers = GoRouter
     (
     routes: [
@@ -75,6 +77,12 @@ abstract class AppRouters
         path: registerView,
         builder: (context, state) {
           return const RegisterView();
+        },
+      ),
+      GoRoute(
+        path: profileView,
+        builder: (context, state) {
+          return const ProfileView();
         },
       ),
     ],

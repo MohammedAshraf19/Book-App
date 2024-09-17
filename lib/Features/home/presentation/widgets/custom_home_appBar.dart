@@ -23,6 +23,15 @@ class CustomHomeAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: (){
+              GoRouter.of(context).push(AppRouters.profileView);
+            },
+            icon: const Icon(
+              FontAwesomeIcons.userTie,
+              size: 24,
+            ),
+          ),
+          IconButton(
+            onPressed: (){
               GoRouter.of(context).push(AppRouters.searchView);
             },
             icon: const Icon(
