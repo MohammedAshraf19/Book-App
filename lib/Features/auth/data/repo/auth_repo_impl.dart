@@ -48,17 +48,6 @@ class AuthRepoImpl implements AuthRepo{
   }
 
   @override
-  Future<Either<String, Future<DocumentSnapshot<Map<String, dynamic>>>>> getUserData(String userId) async{
-    try{
-      Future<DocumentSnapshot<Map<String, dynamic>>> result = FirebaseFirestore.instance.collection('UserBookApp').doc(userId).get();
-      return right(result);
-    }
-    catch(error){
-      int found = splitMessage(error);
-      return left(error.toString().substring(found));
-    }
-  }
-  @override
   Future<Either<String,UserCredential>> signWithGoogle() async{
     try{
       dynamic result;

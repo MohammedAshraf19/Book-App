@@ -8,8 +8,9 @@ import '../../../../Core/widgets/custom_elevated_button.dart';
 import 'card_element.dart';
 
 class CardView extends StatelessWidget {
-  const CardView({super.key});
-
+  const CardView({super.key, required this.email, required this.phone});
+  final String email;
+  final String phone;
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
@@ -23,16 +24,16 @@ class CardView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
             child: Column(
               children: [
-                const CardElement(
+                 CardElement(
                     icon: Icons.email, name: 'Email',
-                    value: 'mohamedashraf55@gmail.com'
+                    value: email
                 ),
                 SizedBox(
                   height:  MediaQuery.of(context).size.height / 30,
                 ),
-                const CardElement(
+                 CardElement(
                     icon: Icons.phone, name: 'Phone',
-                    value: '01128024680'
+                    value: phone
                 ),
                 const Spacer(),
                 CustomElevatedButton(

@@ -2,26 +2,27 @@ import 'package:flutter/material.dart';
 import '../../../../Core/utils/styles.dart';
 
 class ProfileImage extends StatelessWidget {
-  const ProfileImage({super.key});
-
+  const ProfileImage({super.key, required this.image, required this.name});
+  final String image;
+  final String name;
   @override
   Widget build(BuildContext context) {
     return  Padding(
       padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 4),
-      child: const Column(
+      child:  Column(
 
         children: [
           CircleAvatar(
-            backgroundColor: Colors.red,
+            backgroundImage: NetworkImage(image),
             radius: 60,
           ),
-          SizedBox(
-            height: 7,
+          const SizedBox(
+            height: 10,
           ),
           Text(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            'Mohammed Ashraf Mohammed',
+            name,
             style: Styles.testStyle20,
           ),
         ],

@@ -18,7 +18,6 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   late Animation<Offset> sliderAnimation;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     initSliderAnimation();
     navigateToHome();
@@ -28,7 +27,6 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   @override
   void dispose() {
-    // TODO: implement dispose
     animationController.dispose();
     super.dispose();
   }
@@ -60,12 +58,15 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   }
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2),() {
-      if (CacheHelper().getData(key: token) != null)
+      if(CacheHelper().getData(key: uid) != null){
+        GoRouter.of(context).pushReplacement(AppRouters.homeView);
+      }
+      else if (CacheHelper().getData(key: token) != null)
       {
-        GoRouter.of(context).push(AppRouters.loginView);
+        GoRouter.of(context).pushReplacement(AppRouters.loginView);
       }
       else{
-        GoRouter.of(context).push(AppRouters.onBoardingView);
+        GoRouter.of(context).pushReplacement(AppRouters.onBoardingView);
       }
     },);
   }

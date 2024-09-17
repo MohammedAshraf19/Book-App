@@ -24,9 +24,12 @@ class CardElement extends StatelessWidget {
               fontWeight: FontWeight.bold
           ),
         ),
+        const SizedBox(
+          width: 5,
+        ),
         const Spacer(),
         SizedBox(
-          width: MediaQuery.of(context).size.width / 1.5,
+          width: MediaQuery.of(context).size.width / 1.6,
           child: Text(
             value,
             maxLines: 1,

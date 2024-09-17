@@ -3,7 +3,6 @@ import 'package:books/Features/auth/data/models/UserModel/user.dart';
 import 'package:books/Features/auth/data/repo/auth_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../../constant.dart';
 part 'login_state.dart';
 
@@ -29,26 +28,10 @@ class LoginCubit extends Cubit<LoginState> {
     });
   }
 
-  Future<void> getUserData(String userId) async{
-    emit(GetUserDataLoading());
-    final result = await authRepo.getUserData(userId);
-
-    result.fold((error){
-      emit(GetUserDataError(error: error));
-    },
-            (value){
-      value.then((value){
-        myData = UserData.fromJson(value.data());
-        emit(GetUserDataSuccess());
-      });
-    });
-  }
-
   Future<void> loginWithGoogle() async{
     emit(LoginWithGoogleLoading());
     var result = await authRepo.signWithGoogle();
     result.fold((error){
-      print('The Error is $error');
       emit(LoginWithGoogleError(error: error));
     }, (value){
       CacheHelper().saveData(key: uid, value: value.user!.uid);
@@ -59,7 +42,6 @@ class LoginCubit extends Cubit<LoginState> {
         phone: value.user!.phoneNumber,
         name: value.user!.displayName,
       );
-      print('THe Data is ${myData.email}');
       emit(LoginWithGoogleSuccess());
     });
   }
