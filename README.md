@@ -9,7 +9,6 @@ A Flutter application where users can read books, search for books, view author 
 - [Technology_Stack](#Technology_Stack)
 - [Screenshots](#Screenshots)
 - [Demo](#Demo)
-- [UI/UX](#UI/UX)
 - [Contributing](#Contributing)
 - [Contact](#Contact)
 
@@ -17,8 +16,8 @@ A Flutter application where users can read books, search for books, view author 
 - 🔍 **Search for Books**: Users can search for any book they want.
 - 📖 **Read Books**: The app provides links to the book PDFs on the web.
 - 👤 **User Profiles**: Each user has their own profile.
-- 📝 **Author Info**: View author details for each book.
-- 📚 **Similar Books**: Get suggestions for similar books based on the user’s choice.
+- 📝 **Book Details**: When a user selects a book, detailed information such as the author, title, and rating is displayed.
+- 📚 **Suggested Books**: Get suggestions for similar books based on the user’s choice.
 
 ## Technologies_Used
 - **Flutter**: Front-end framework used to build the app.
