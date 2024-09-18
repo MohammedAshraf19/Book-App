@@ -14,7 +14,6 @@ class HomeRepoImpl implements HomeRepo
       var data = await ApiServices.getData(
         endPoint: 'volumes',
         query: {
-          'filter':'free-ebooks',
           'q':'Programming',
         },
       );
@@ -39,8 +38,7 @@ class HomeRepoImpl implements HomeRepo
       var data = await ApiServices.getData(
         endPoint: 'volumes',
         query: {
-          'filter':'free-ebooks',
-          'q':'Programming',
+          'q':'Mobile Application Development',
         },
       );
       for (var item in data.data["items"])
@@ -64,9 +62,7 @@ class HomeRepoImpl implements HomeRepo
       var data = await ApiServices.getData(
         endPoint: 'volumes',
         query: {
-          'filter':'free-ebooks',
           'q': category,
-          'sorting': 'relevance',
         },
       );
       for (var item in data.data["items"])

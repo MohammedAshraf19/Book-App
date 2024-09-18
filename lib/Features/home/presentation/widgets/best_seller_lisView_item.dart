@@ -25,7 +25,7 @@ class BestSellerListViewItem extends StatelessWidget {
         );
       },
       child: SizedBox(
-        height: MediaQuery.sizeOf(context).height / 5.5,
+        height: 150,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

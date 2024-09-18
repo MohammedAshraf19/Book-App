@@ -8,6 +8,7 @@ import 'package:books/Features/home/data/repos/home_repo_impl.dart';
 import 'package:books/Features/home/presentation/view_models/Feature_Book_Cubit/feature_book_cubit.dart';
 import 'package:books/constant.dart';
 import 'package:books/firebase_options.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,10 @@ void main() async{
   );
   await CacheHelper().init();
   runApp(
-    const BooksApp(),
+    DevicePreview(
+      enabled: false,
+      builder: (BuildContext context)=>const BooksApp(),
+    ),
   );
 }
 
@@ -47,6 +51,8 @@ class BooksApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
         title: 'Bookly',
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: primaryColor,
