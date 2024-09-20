@@ -44,7 +44,7 @@ A Flutter application where users can read books, search for books, view author 
 ![profile](https://github.com/user-attachments/assets/e11ee2ef-fce4-487b-9b20-de7250c62b5b)
 
 ## Demo
-*(Add screenshots of your app here)*
+*[(Demo)](https://www.linkedin.com/posts/mohammed-ashraf19_flutter-bookapp-googlebooksapi-activity-7242540514514751489-XD0l?utm_source=share&utm_medium=member_desktop)*
 
 ## Contributing
 Feel free to contribute to this project by opening an issue or submitting a pull request.
