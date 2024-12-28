@@ -30,11 +30,7 @@ A Flutter application where users can read books, search for books, view author 
 
 ## Screenshots
 ![0](https://github.com/user-attachments/assets/ca48a227-d577-4901-b6b8-14ccc30b8f9a)
-![image1](https://github.com/user-attachments/assets/c10e59ea-679b-4a24-ba20-ab2d327f1e23)
-![image2](https://github.com/user-attachments/assets/fc7e6b9f-d306-4886-8ed4-7ee6ca8ccadd)
-![image3](https://github.com/user-attachments/assets/1416733c-e23a-49ca-8261-34676062d1a1)
-![image4](https://github.com/user-attachments/assets/23009345-1191-4c2f-9d1e-6b60c61c0c7a)
-![image5](https://github.com/user-attachments/assets/fb2ae17c-00f8-4418-ab1d-f73704a12a83)
+![image1](https://github.com/user-attachments/assets/c10e59ea-679b-4a24-ba20-ab2d327f1e23) ![image2](https://github.com/user-attachments/assets/fc7e6b9f-d306-4886-8ed4-7ee6ca8ccadd) ![image3](https://github.com/user-attachments/assets/1416733c-e23a-49ca-8261-34676062d1a1) ![image4](https://github.com/user-attachments/assets/23009345-1191-4c2f-9d1e-6b60c61c0c7a) ![image5](https://github.com/user-attachments/assets/fb2ae17c-00f8-4418-ab1d-f73704a12a83)
 ![login](https://github.com/user-attachments/assets/fe9a627e-d89b-4d9d-8e3e-2b9308df4065)
 ![register](https://github.com/user-attachments/assets/a4d991ea-e8a1-465e-90df-7b3da324d63b)
 ![loading](https://github.com/user-attachments/assets/566255b3-c327-4291-a981-3a5014c5217a)
